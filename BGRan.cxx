@@ -56,7 +56,7 @@ int main() {
 //    std::cout << buffer2 << '\n';
 //    int result3[4096];
     int c = 0;
-    for(int i = 0; i < 767; i++){
+    for(int i = 0; i < 768; i++){
         file.read(buffer2, 4096);
 	for(int b = 0; b < 4096; b++){
             maxArray[c] = static_cast<int>(buffer2[b]);
@@ -67,11 +67,16 @@ int main() {
          //   intArray.push_back(static_cast<int>(c));
 	}*/
     }
-    for(int i = 0; i < 4096*767; i++){
+    for(int i = 0; i < 4096*768; i++){
         //outfile.write(reinterpret_cast<char *>(&val), s>
-        if(maxArray[i] == 999){
-            //do something
-        }
+/*        if(maxArray[i] == 255){
+	    if(maxArray[i+1] == 193){
+		if(maxArray[i+2] == 148){
+	            //output if found
+		    std::cout << "found\n";
+		}
+	    }
+        }    */
         outfile << maxArray[i] << '\n';
 //      std::cout << val << '\n';
     }
